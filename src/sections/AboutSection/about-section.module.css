@@ -1,0 +1,454 @@
+.about {
+  position: relative;
+  padding: 140px 24px 120px;
+  overflow: hidden;
+  color: #eef4ff;
+  background: #07111f;
+}
+
+.routeConnector {
+  position: absolute;
+  top: 22px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.routeLabel,
+.routeStop {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(248, 250, 252, 0.72);
+}
+
+.routeTrack {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(96, 165, 250, 0.36), rgba(248, 250, 252, 0.08));
+  overflow: hidden;
+}
+
+.routeTrack::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(96, 165, 250, 0.9), rgba(96, 165, 250, 0));
+  opacity: 0.7;
+  transform: translateX(-100%);
+  animation: routeSweep 3.5s ease-in-out infinite;
+}
+
+@keyframes routeSweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(520px, 0.96fr);
+  align-items: center;
+  gap: 72px;
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.copyPanel {
+  display: grid;
+  gap: 24px;
+}
+
+.sectionEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #60a5fa;
+}
+
+.sectionEyebrow::before {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: rgba(96, 165, 250, 0.35);
+}
+
+.heading {
+  margin: 18px 0 0;
+  font-size: clamp(3rem, 4vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+  max-width: 640px;
+}
+
+.description {
+  margin-top: 22px;
+  max-width: 600px;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(238, 244, 255, 0.82);
+}
+
+.stats {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.stat {
+  padding: 20px 22px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(96, 165, 250, 0.12);
+}
+
+.stat span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.stat p {
+  margin: 8px 0 0;
+  font-size: 0.95rem;
+  color: rgba(248, 250, 252, 0.74);
+  line-height: 1.6;
+}
+
+.storyTag {
+  margin-top: 34px;
+  padding: 24px 24px 22px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.12), rgba(15, 23, 42, 0.88));
+  border: 1px solid rgba(96, 165, 250, 0.14);
+}
+
+.storyTag strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.storyTag p {
+  margin: 12px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(248, 250, 252, 0.78);
+}
+
+.visual {
+  position: relative;
+  min-height: 560px;
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: 0 48px 104px rgba(7, 17, 31, 0.48);
+}
+
+.visualImage {
+  object-fit: cover;
+}
+
+.visualOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 17, 31, 0.18), rgba(7, 17, 31, 0.92));
+}
+
+.overlayTag {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  max-width: 320px;
+  padding: 20px 22px;
+  border-radius: 24px;
+  background: rgba(15, 23, 42, 0.82);
+  border: 1px solid rgba(96, 165, 250, 0.16);
+}
+
+.overlayTag span {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.overlayTag p {
+  margin: 10px 0 0;
+  color: rgba(248, 250, 252, 0.76);
+  line-height: 1.7;
+}
+
+@media (max-width: 1120px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+}
+
+@media (max-width: 760px) {
+  .about {
+    padding: 88px 18px 80px;
+  }
+
+  .heading {
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dockEdge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12%;
+  height: 90px;
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.04) 0%, rgba(15, 23, 42, 0.96) 100%);
+  border-top: 1px solid rgba(248, 250, 252, 0.08);
+}
+
+.ship {
+  position: absolute;
+  left: 8%;
+  bottom: 22%;
+  width: 280px;
+  height: 84px;
+  border-radius: 40px 40px 18px 18px;
+  background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 100%);
+  box-shadow: 0 24px 54px rgba(15, 23, 42, 0.28);
+}
+
+.ship::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 16px;
+  width: 56%;
+  height: 20px;
+  background: linear-gradient(90deg, #0f172a 0%, #475569 100%);
+  border-radius: 999px;
+}
+
+.ship::after {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 42px;
+  width: 28px;
+  height: 28px;
+  background: #0f172a;
+  border-radius: 6px;
+}
+
+.crane {
+  position: absolute;
+  right: 12%;
+  top: 14%;
+  width: 190px;
+  height: 344px;
+}
+
+.craneTower {
+  position: absolute;
+  right: 30px;
+  top: 0;
+  width: 28px;
+  height: 100%;
+  background: linear-gradient(180deg, #f8fafc 0%, #cbd5e1 100%);
+  border-radius: 999px;
+  box-shadow: 0 0 22px rgba(249, 115, 22, 0.12);
+}
+
+.craneArm {
+  position: absolute;
+  right: 28px;
+  top: 32px;
+  width: 220px;
+  height: 14px;
+  border-radius: 999px;
+  background: rgba(248, 250, 252, 0.92);
+  box-shadow: 0 0 22px rgba(248, 250, 252, 0.18);
+}
+
+.craneCab {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 90px;
+  height: 56px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  border: 1px solid rgba(248, 250, 252, 0.12);
+}
+
+.hook {
+  position: absolute;
+  right: 22px;
+  top: 76px;
+  width: 4px;
+  height: 132px;
+  background: rgba(248, 250, 252, 0.88);
+  border-radius: 999px;
+}
+
+.containerOnHook {
+  position: absolute;
+  right: 2px;
+  top: 206px;
+  width: 72px;
+  height: 54px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #2563eb 0%, #60a5fa 100%);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.24);
+}
+
+.trackers {
+  position: absolute;
+  right: 16%;
+  bottom: 16%;
+  width: 260px;
+  padding: 20px 22px;
+  border-radius: 28px;
+  background: rgba(15, 23, 42, 0.82);
+  border: 1px solid rgba(96, 165, 250, 0.16);
+  backdrop-filter: blur(10px);
+}
+
+.trackers p {
+  margin: 0;
+  color: rgba(248, 250, 252, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.trackers strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #f8fafc;
+  margin-bottom: 10px;
+}
+
+.containerStack {
+  position: absolute;
+  left: 48%;
+  bottom: 14%;
+  width: 46%;
+  min-height: 250px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.containerItem {
+  height: 72px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.12) 0%, rgba(248, 250, 252, 0.02) 100%);
+  border: 1px solid rgba(248, 250, 252, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.06);
+}
+
+.containerItem:nth-child(odd) {
+  background: linear-gradient(180deg, rgba(96, 165, 250, 0.18) 0%, rgba(96, 165, 250, 0.04) 100%);
+}
+
+.containerItem:nth-child(even) {
+  transform: translateY(18px);
+}
+
+.floatingBadge {
+  position: absolute;
+  right: 10%;
+  top: 12%;
+  width: 148px;
+  padding: 16px 18px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(248, 250, 252, 0.14);
+}
+
+.floatingBadge p {
+  margin: 0;
+  color: #dbeafe;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.floatingBadge span {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #60a5fa;
+}
+
+@media (max-width: 1120px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+
+  .visual {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 760px) {
+  .about {
+    padding: 88px 18px 80px;
+  }
+
+  .aboutGrid {
+    gap: 40px;
+  }
+
+  .heading {
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .containerStack {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+  }
+
+  .ship {
+    left: 8%;
+    width: 220px;
+  }
+
+  .crane {
+    right: 10%;
+    width: 160px;
+    height: 300px;
+  }
+
+  .trackers {
+    width: auto;
+    right: 8%;
+  }
+}

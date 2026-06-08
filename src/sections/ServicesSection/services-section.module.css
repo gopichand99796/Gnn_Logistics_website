@@ -1,0 +1,332 @@
+.services {
+  position: relative;
+  padding: 140px 24px 160px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #07111f 0%, #06111f 100%);
+  color: #eef4ff;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  width: 720px;
+  height: 560px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at 50% 20%, rgba(96, 165, 250, 0.12), transparent 38%);
+  pointer-events: none;
+}
+
+.intro {
+  max-width: 900px;
+  margin: 0 auto 56px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.12);
+  color: #60a5fa;
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 22px auto 0;
+  max-width: 720px;
+  font-size: clamp(2.8rem, 4.5vw, 4.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-top: 22px;
+  max-width: 700px;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: rgba(238, 244, 255, 0.78);
+}
+
+.journey {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 92px minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.photoBackdrop {
+  grid-column: 1 / -1;
+  position: relative;
+  height: 320px;
+  border-radius: 32px;
+  overflow: hidden;
+  border: 1px solid rgba(248, 250, 252, 0.08);
+  box-shadow: 0 40px 120px rgba(7, 17, 31, 0.3);
+}
+
+.photoBackdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 17, 31, 0.2), rgba(7, 17, 31, 0.7));
+}
+
+.photoImage {
+  object-fit: cover;
+}
+
+.photoLabel {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(96, 165, 250, 0.18);
+  color: #f8fafc;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+}
+
+.serviceColumn {
+  display: grid;
+  gap: 36px;
+}
+
+.routeColumn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.routeTrack {
+  position: relative;
+  width: 6px;
+  min-height: 810px;
+  background: rgba(248, 250, 252, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.routeFill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(96, 165, 250, 0.9), rgba(37, 99, 235, 0.24));
+  transform-origin: top;
+}
+
+.routeNode {
+  position: absolute;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: #60a5fa;
+  box-shadow: 0 0 24px rgba(96, 165, 250, 0.35);
+}
+
+.cargoPulse {
+  position: absolute;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: #f8fafc;
+  box-shadow: 0 0 18px rgba(248, 250, 252, 0.45);
+}
+
+.containerCard {
+  position: relative;
+  min-height: 220px;
+  padding: 28px 24px 22px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(7, 17, 31, 0.98));
+  border: 1px solid rgba(96, 165, 250, 0.14);
+  box-shadow: 0 38px 90px rgba(7, 17, 31, 0.28);
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.containerCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 10px;
+  background: linear-gradient(90deg, rgba(96, 165, 250, 0.38), rgba(248, 250, 252, 0.08));
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.containerCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 48px 110px rgba(37, 99, 235, 0.24);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.cardBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.14);
+  color: #60a5fa;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.cardText {
+  margin: 0;
+  color: rgba(248, 250, 252, 0.74);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.cardDetail {
+  margin-top: 22px;
+  padding: 18px 18px 16px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(248, 250, 252, 0.84);
+  opacity: 0;
+  transform: translateY(14px);
+  max-height: 0;
+  overflow: hidden;
+  transition: all 220ms ease;
+  pointer-events: none;
+}
+
+.containerCard:hover .cardDetail {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 140px;
+  pointer-events: auto;
+}
+
+.cardDetail strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.96rem;
+}
+
+.cardDetail p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.connector {
+  position: absolute;
+  top: 52px;
+  width: 48px;
+  height: 2px;
+  background: rgba(96, 165, 250, 0.2);
+}
+
+.containerCard.left .connector {
+  right: -56px;
+}
+
+.containerCard.right .connector {
+  left: -56px;
+}
+
+.connector::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #60a5fa;
+  top: -4px;
+}
+
+.containerCard.left .connector::after {
+  right: 0;
+}
+
+.containerCard.right .connector::after {
+  left: 0;
+}
+
+@media (max-width: 1120px) {
+  .journey {
+    grid-template-columns: 1fr;
+  }
+
+  .routeColumn {
+    display: none;
+  }
+
+  .photoBackdrop {
+    height: 320px;
+  }
+}
+
+@media (max-width: 760px) {
+  .services {
+    padding: 100px 18px 120px;
+  }
+
+  .intro {
+    margin-bottom: 46px;
+  }
+
+  .title {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .serviceColumn {
+    gap: 26px;
+  }
+
+  .containerCard {
+    padding: 24px 20px 18px;
+  }
+
+  .containerCard.left .connector,
+  .containerCard.right .connector {
+    display: none;
+  }
+}

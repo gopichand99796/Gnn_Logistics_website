@@ -1,0 +1,192 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  overflow: hidden;
+  color: rgba(96, 165, 250, 0.92);
+}
+
+.routeSvg {
+  position: absolute;
+  right: 10vw;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  overflow: visible;
+  color: rgba(96, 165, 250, 0.22);
+}
+
+.routePath {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  color: rgba(96, 165, 250, 0.22);
+}
+
+.nodes {
+  position: absolute;
+  right: calc(10vw + 5px);
+  top: 6%;
+  height: 86%;
+  width: 26px;
+}
+
+.node {
+  position: absolute;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(96, 165, 250, 0.8);
+  transform: translateX(-50%);
+  box-shadow: 0 0 18px rgba(96, 165, 250, 0.25);
+}
+
+.nodeA {
+  top: 8%;
+}
+
+.nodeB {
+  top: 30%;
+}
+
+.nodeC {
+  top: 55%;
+}
+
+.nodeD {
+  top: 80%;
+}
+
+.vehicle {
+  position: absolute;
+  right: calc(10vw + 16px);
+  width: 84px;
+  height: 40px;
+  transform: translateX(50%);
+}
+
+.ship,
+.container,
+.truck {
+  position: absolute;
+  left: 0;
+  width: 84px;
+  height: 40px;
+  border-radius: 18px;
+  filter: drop-shadow(0 20px 40px rgba(7, 17, 31, 0.26));
+  transform-origin: center;
+}
+
+.ship {
+  background: linear-gradient(180deg, #dbeafe 0%, #c7d9f0 100%);
+}
+
+.ship::before,
+.container::before,
+.truck::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 10px;
+  width: 56px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.ship::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  width: 68px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.28);
+}
+
+.container {
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.9), rgba(37, 99, 235, 0.6));
+}
+
+.container::before {
+  width: 60px;
+  top: 8px;
+  left: 12px;
+  height: 22px;
+  border-radius: 12px;
+  background: rgba(248, 250, 252, 0.1);
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: rgba(248, 250, 252, 0.18);
+}
+
+.truck {
+  background: linear-gradient(180deg, #f8fafc 0%, #dbeafe 100%);
+  border-radius: 16px;
+}
+
+.truck::before {
+  width: 40px;
+  height: 16px;
+  top: 10px;
+  left: 12px;
+  border-radius: 8px;
+  background: rgba(37, 99, 235, 0.9);
+}
+
+.truck::after {
+  content: '';
+  position: absolute;
+  left: 50px;
+  bottom: 6px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #0f172a;
+  box-shadow: 0 0 0 6px rgba(248, 250, 252, 0.08);
+}
+
+.truck::before {
+  box-shadow: 0 0 0 6px rgba(15, 23, 42, 0.08);
+}
+
+@media (max-width: 980px) {
+  .routeSvg,
+  .nodes,
+  .vehicle {
+    right: 6vw;
+  }
+}
+
+@media (max-width: 720px) {
+  .routeSvg {
+    display: none;
+  }
+
+  .nodes {
+    display: none;
+  }
+
+  .vehicle {
+    right: 4vw;
+    width: 64px;
+    height: 32px;
+  }
+
+  .ship,
+  .container,
+  .truck {
+    width: 64px;
+    height: 32px;
+  }
+}
