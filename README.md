@@ -118,12 +118,6 @@ Key principles:
 
 ---
 
-## 📸 Screenshots
-
-Add screenshots of the Hero section, Landfall section, and Connected Network section here.
-
----
-
 ## 🚀 Deployment
 
 Hosted on Vercel:
